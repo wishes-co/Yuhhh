@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>BISINA CLUB | Night Starts Here</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: #080808;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    /* NAVBAR */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 7%;
+      background: rgba(0,0,0,0.65);
+      backdrop-filter: blur(12px);
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 900;
+      letter-spacing: 3px;
+      color: #ff2bd6;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 25px;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #ff2bd6;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 100px 20px 40px;
+      background:
+        radial-gradient(circle at 50% 40%, rgba(255,0,180,.25), transparent 35%),
+        linear-gradient(#050505, #10000d);
+    }
+
+    .hero h1 {
+      font-size: clamp(55px, 12vw, 140px);
+      letter-spacing: 10px;
+      text-shadow: 0 0 25px #ff2bd6;
+    }
+
+    .hero p {
+      margin: 20px 0;
+      color: #ccc;
+      font-size: 18px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 14px 30px;
+      border-radius: 30px;
+      background: #ff2bd6;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 0 25px rgba(255,43,214,.6);
+      transition: .3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.06);
+      box-shadow: 0 0 40px rgba(255,43,214,.9);
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 90px 7%;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 42px;
+      margin-bottom: 50px;
+    }
+
+    .title span {
+      color: #ff2bd6;
+    }
+
+    /* HOURS */
+    .hours {
+      text-align: center;
+      background: #0e0e0e;
+    }
+
+    .hours-card {
+      max-width: 500px;
+      margin: auto;
+      padding: 35px;
+      border: 1px solid #292929;
+      border-radius: 20px;
+      background: linear-gradient(145deg,#151515,#090909);
+      box-shadow: 0 0 30px rgba(255,43,214,.12);
+    }
+
+    .hours-card h3 {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .open {
+      color: #00ff88;
+      font-weight: bold;
+    }
+
+    /* EVENTS */
+    .events {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+      gap: 25px;
+    }
+
+    .event {
+      padding: 30px;
+      border-radius: 18px;
+      background: #121212;
+      border: 1px solid #272727;
+      transition: .3s;
+    }
+
+    .event:hover {
+      transform: translateY(-8px);
+      border-color: #ff2bd6;
+      box-shadow: 0 0 25px rgba(255,43,214,.2);
+    }
+
+    .event h3 {
+      color: #ff2bd6;
+      margin-bottom: 12px;
+    }
+
+    .event p {
+      color: #aaa;
+      line-height: 1.6;
+    }
+
+    /* DJ */
+    .dj {
+      text-align: center;
+      background: #0d0d0d;
+    }
+
+    .dj-box {
+      max-width: 650px;
+      margin: auto;
+      padding: 45px;
+      border-radius: 25px;
+      background: linear-gradient(135deg,#160014,#090909);
+    }
+
+    .dj-box h2 {
+      font-size: 40px;
+      color: #ff2bd6;
+    }
+
+    .dj-box p {
+      margin-top: 15px;
+      color: #aaa;
+    }
+
+    /* CTA */
+    .cta {
+      text-align: center;
+      background:
+        radial-gradient(circle, rgba(255,43,214,.2), transparent 55%),
+        #080808;
+    }
+
+    .cta h2 {
+      font-size: 45px;
+      margin-bottom: 15px;
+    }
+
+    .cta p {
+      color: #aaa;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #050505;
+      color: #777;
+      font-size: 13px;
+    }
+
+    @media(max-width:700px) {
+      nav {
+        padding: 18px 5%;
+      }
+
+      nav .links {
+        display: none;
+      }
+
+      .hero h1 {
+        letter-spacing: 5px;
+      }
+
+      section {
+        padding: 70px 5%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="logo">BISINA</div>
+
+    <div class="links">
+      <a href="#home">Home</a>
+      <a href="#hours">Hours</a>
+      <a href="#events">Events</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div>
+      <h1>BISINA</h1>
+      <p>Where The Night Comes Alive.</p>
+
+      <a href="#contact" class="btn">BOOK YOUR NIGHT</a>
+    </div>
+  </section>
+
+  <!-- HOURS -->
+  <section class="hours" id="hours">
+
+    <h2 class="title">CLUB <span>HOURS</span></h2>
+
+    <div class="hours-card">
+
+      <h3>We're Open</h3>
+
+      <p>
+        <strong>Friday – Sunday</strong>
+      </p>
+
+      <p style="margin-top:10px;">
+        6:00 PM — 2:00 AM
+      </p>
+
+      <p style="margin-top:15px;" class="open">
+        ● OPEN TONIGHT
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- EVENTS -->
+  <section id="events">
+
+    <h2 class="title">UPCOMING <span>NIGHTS</span></h2>
+
+    <div class="events">
+
+      <div class="event">
+        <h3>FRIDAY</h3>
+        <p>Neon Friday</p>
+        <p>Live DJ • Dance • Lights</p>
+      </div>
+
+      <div class="event">
+        <h3>SATURDAY</h3>
+        <p>Bisina After Dark</p>
+        <p>Premium Night • DJ Set</p>
+      </div>
+
+      <div class="event">
+        <h3>SUNDAY</h3>
+        <p>Sunday Chill</p>
+        <p>Music • Lounge • Good Vibes</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- DJ -->
+  <section class="dj">
+
+    <div class="dj-box">
+
+      <h2>DJ RUSH</h2>
+
+      <p>
+        Resident DJ bringing the energy,
+        beats and unforgettable nights at Bisina Club.
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+  <section class="cta" id="contact">
+
+    <h2>READY FOR THE NIGHT?</h2>
+
+    <p>Reserve your table and experience Bisina.</p>
+
+    <a href="https://wa.me/910000000000" class="btn">
+      RESERVE NOW
+    </a>
+
+  </section>
+
+  <footer>
+    © 2026 BISINA CLUB — All Rights Reserved
+  </footer>
+
+</body>
+</html>
